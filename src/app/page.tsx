@@ -1,53 +1,49 @@
-import Nav from "../components/Nav";
+import Shell from "../components/Shell";
+
+const featured = [
+  { title: "Probabilistic Models", desc: "Research artifacts: papers + visualizations (attach later).", href: "/research" },
+  { title: "AI Systems", desc: "Agents, pipelines, and infrastructure work (attach later).", href: "/projects" },
+  { title: "Demos", desc: "Interactive proof: no screenshots-only portfolios.", href: "/demos" },
+];
+
 export default function Home() {
   return (
-    <><Nav/><main className="min-h-screen bg-black text-zinc-100">
-      <div className="mx-auto max-w-5xl px-6 py-16">
-        <div className="flex flex-col gap-6">
-          <p className="text-sm tracking-widest text-zinc-400">COLONEL1223 LAB</p>
-          <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-            Spencer K. Cottrell
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-300 max-w-3xl">
-            AI systems + research artifacts: papers, models, demos, and engineering work.
-            Built for reproducibility, clarity, and signal.
-          </p>
+    <Shell
+      title="Spencer K. Cottrell"
+      subtitle="AI systems + research artifacts: papers, models, demos, and engineering work — built for reproducibility, clarity, and signal."
+    >
+      <div className="flex flex-wrap gap-3">
+        <a className="rounded-2xl border border-zinc-800 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-500" href="/research">
+          View Research
+        </a>
+        <a className="rounded-2xl border border-zinc-800 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-500" href="/projects">
+          View Projects
+        </a>
+        <a className="rounded-2xl border border-zinc-800 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-500" href="/models">
+          View Models
+        </a>
+      </div>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/research">Research</a>
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/projects">Projects</a>
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/models">Models</a>
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/demos">Demos</a>
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/writing">Writing</a>
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/cv">CV</a>
-            <a className="rounded-2xl border border-zinc-700 px-4 py-2 hover:border-zinc-400"
-               href="/contact">Contact</a>
-          </div>
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {featured.map((c) => (
+          <a key={c.title} href={c.href} className="rounded-2xl border border-zinc-900 bg-zinc-950 p-5 hover:border-zinc-700">
+            <div className="text-lg font-semibold">{c.title}</div>
+            <div className="mt-2 text-sm text-zinc-400">{c.desc}</div>
+            <div className="mt-4 text-xs text-zinc-500">Open →</div>
+          </a>
+        ))}
+      </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {[
-              { title: "Research", desc: "Papers + technical reports (arXiv-ready formatting later)." },
-              { title: "Systems", desc: "Real engineered systems: agents, pipelines, infra." },
-              { title: "Demos", desc: "Interactive proof. No screenshots-only portfolios." },
-            ].map((c) => (
-              <div key={c.title} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 shadow">
-                <div className="text-lg font-semibold">{c.title}</div>
-                <div className="mt-2 text-sm text-zinc-400">{c.desc}</div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-12 text-xs text-zinc-500">
-            © {new Date().getFullYear()} — colonel1223.net
-          </p>
+      <div className="mt-12 rounded-2xl border border-zinc-900 bg-zinc-950 p-6">
+        <div className="text-sm text-zinc-400">Current focus</div>
+        <div className="mt-2 flex flex-wrap gap-2 text-sm">
+          {["AI safety", "agent systems", "embodied intelligence", "ML infrastructure", "probabilistic modeling"].map((t) => (
+            <span key={t} className="rounded-full border border-zinc-800 px-3 py-1 text-zinc-300">
+              {t}
+            </span>
+          ))}
         </div>
       </div>
-    </main></>
+    </Shell>
   );
 }
