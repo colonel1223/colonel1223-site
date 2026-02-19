@@ -1,14 +1,8 @@
-import Shell from "../../components/Shell";
-
 export default function Page() {
   return (
-    <Shell
-      title="demos"
-      subtitle="Attach research, models, demos, and artifacts here."
-    >
-      <div className="rounded-2xl border border-zinc-900 bg-zinc-950 p-5">
-        Ready for content.
-      </div>
-    </Shell>
+    <main className="mx-auto max-w-4xl px-6 py-16">
+      <h1 className="text-4xl font-bold">demos</h1>
+      <p className="mt-4 text-zinc-400">Curated demos — built for clarity, reproducibility, and signal.</p>
+    </main>
   );
 }

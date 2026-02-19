@@ -1,30 +1,8 @@
-import Shell from "../../components/Shell";
-
 export default function Page() {
   return (
-    <Shell
-      title="infrastructure"
-      subtitle="Professional section — attach real artifacts later."
-    >
-      <div className="grid gap-4 md:grid-cols-2">
-
-        <div className="rounded-2xl border border-zinc-900 bg-zinc-950 p-5">
-          <div className="text-sm text-zinc-400">Status</div>
-          <div className="mt-2 text-lg font-semibold">Ready</div>
-          <div className="mt-2 text-sm text-zinc-400">
-            Content will be attached here (papers, links, infrastructure details, metrics).
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-zinc-900 bg-zinc-950 p-5">
-          <div className="text-sm text-zinc-400">Next</div>
-          <div className="mt-2 text-lg font-semibold">Attach artifacts</div>
-          <div className="mt-2 text-sm text-zinc-400">
-            This section will host production work and research outputs.
-          </div>
-        </div>
-
-      </div>
-    </Shell>
+    <main className="mx-auto max-w-4xl px-6 py-16">
+      <h1 className="text-4xl font-bold">infrastructure</h1>
+      <p className="mt-4 text-zinc-400">Curated infrastructure — built for clarity, reproducibility, and signal.</p>
+    </main>
   );
 }
