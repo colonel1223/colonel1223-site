@@ -1,6 +1,7 @@
+import Nav from "../components/Nav";
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-zinc-100">
+    <><Nav/><main className="min-h-screen bg-black text-zinc-100">
       <div className="mx-auto max-w-5xl px-6 py-16">
         <div className="flex flex-col gap-6">
           <p className="text-sm tracking-widest text-zinc-400">COLONEL1223 LAB</p>
@@ -47,6 +48,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-    </main>
+    </main></>
   );
 }
