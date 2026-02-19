@@ -1,3 +1,4 @@
+import GithubFeed from "../components/GithubFeed";
 import Shell from "../components/Shell";
 
 const featured = [
